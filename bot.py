@@ -23,6 +23,10 @@ DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
 USER_ID = int(os.getenv("USER_ID"))
 URLS = os.getenv("URLS").split(',')  # Récupérer les URLs comme une liste
 
+# Lire les URLs depuis le fichier urls.txt
+with open("urls.txt", "r") as file:
+    URLS = [line.strip() for line in file.readlines()]
+    
 # Initialiser le bot
 intents = discord.Intents.default()
 intents.messages = True
