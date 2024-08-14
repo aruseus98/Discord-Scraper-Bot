@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  discord-manganato-bot:
+    build: .
+    container_name: discord-manganato-bot
+    volumes:
+      - ./urls.txt:/app/urls.txt
+    environment:
+      - DISCORD_TOKEN=${DISCORD_TOKEN}
+      - USER_ID=${USER_ID}
+    restart: always
